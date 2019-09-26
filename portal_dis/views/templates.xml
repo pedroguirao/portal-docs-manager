@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="dis_link" name="di's Link" inherit_id="portal.frontend_layout">
+    <!-- <template id="dis_link" name="di's Link" inherit_id="portal.frontend_layout">
         <xpath expr="//li[@id='o_logout']" position="before">
             <a href="/my/dis/" role="menuitem" class="dropdown-item"
                t-if="website.user_id != user_id">Mis DIs</a>
         </xpath>
-    </template>
+    </template>-->
 
     <template id="portal_my_dis_menu" name="Portal layout : dis menu entries" inherit_id="portal.portal_layout" priority="999">
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
@@ -14,31 +14,18 @@
                 <a t-if="sale_order" t-attf-href="/my/dis?{{ keep_query() }}">Mis DIs</a>
                 <t t-else="">Mis DIs</t>
             </li>
-            <li t-if="page_name == 'order' or sale_order and sale_order.state not in ('sent', 'cancel')" t-attf-class="breadcrumb-item #{'active ' if not sale_order else ''}">
-                <a t-if="sale_order" t-attf-href="/my/orders?{{ keep_query() }}">MY DOCS 2</a>
-                <t t-else="">MY DOCS 2</t>
-            </li>
-            <li t-if="sales_order">
-                <t t-if="sales_order.state in ('sent', 'cancel')">Quotation</t>
-                <t t-else="">Order</t>
-                <t t-esc="sales_order.name"/>
-            </li>
         </xpath>
     </template>
-
+    
     <template id="portal_my_dis_home" name="Portal My Home : dis entries" inherit_id="portal.portal_my_home" priority="999">
         <xpath expr="//ul[hasclass('o_portal_docs')]" position="inside">
-            <t t-if="di_count" class="list-group-item">
+            <li t-if="di_count" class="list-group-item">
                 <span class="badge" t-esc="di_count"/>
-                <a href="/my/dis">Mis DI's</a>
-            </t>
-            <li t-if="order_count" class="list-group-item">
-                <span class="badge" t-esc="order_count"/>
-                <a href="/my/orders">My DOCS 2</a>
+                <a href="/my/dis">Mis DIs</a>
             </li>
         </xpath>
     </template>
-
+    
    <template id="portal_my_dis" name="My DIS">
         <t t-call="portal.portal_layout">
         <h3>DI's
@@ -63,14 +50,11 @@
                             <a t-attf-href="/my/dis/#{di.id}?#{keep_query()}"><t t-esc="di.x_name"/></a>
                         </td>
                         <td><span t-field="di.x_operador_traslado_id"/></td>
-                        
                         <td>
                           <t t-if="di.x_estado == 'pendiente'">
                             <span class="label label-default"><i class="fa fa-fw fa-remove"/> Pendiente</span>
                           </t>
-                          
                         </td>
-                       
                     </tr>
                 </t>
             </table></div>
@@ -80,7 +64,6 @@
         </div>
       </t>
     </template>
-    
     
     <template id="portal_di_page" name="doc di">
       <t t-call="portal.portal_layout">
@@ -115,7 +98,7 @@
                             <i class="fa fa-check-circle"/> Signed
                         </a>
                     </t>
-                    <a target="_blank" t-att-href="'/my/di/pdf/%s?%s' % (di.id, keep_query())" class="ml8 pull-right mt4 mr8" title="Download">
+                    <a target="_blank" t-att-href="'/my/dis/pdf/%s?%s' % (di.id, keep_query())" class="ml8 pull-right mt4 mr8" title="Download">
                         <i class="fa fa-download fa-2x" aria-hidden="true"/>
                     </a>
                 </div>

@@ -132,10 +132,10 @@ class CustomerPortal(CustomerPortal):
             di_sudo = self._di_check_access(di_id, access_token)
         except AccessError:
             return request.redirect('/my')
-
         # print report as sudo, since it require access to taxes, payment term, ... and portal
         # does not have those access rights.
         pdf = request.env.ref('studio_customization.report_9ff70961-9b77-435c-969e-64439fb6b04f').sudo().render_qweb_pdf([di_sudo.id])[0]
+        #pdf = request.env.ref('sale.action_report_saleorder').sudo().render_qweb_pdf([di_sudo.id])[0]
         pdfhttpheaders = [
             ('Content-Type', 'application/pdf'),
             ('Content-Length', len(pdf)),
