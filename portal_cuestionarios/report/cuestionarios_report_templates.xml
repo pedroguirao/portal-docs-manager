@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_cuestionarios_document">
+                    <t t-call="web.external_layout">
+                            <br/>
+                            
+                            <h2>
+                                <span t-field="o.x_name" modifiers="{}"/>            
+                            </h2>
+                            <table class="table-border" style="width:100%;padding-top: 5px; padding-bottom:5px;">
+                                <tr>
+                                    <td style="width:30%">
+                                        <span><strong>Tipo</strong></span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.x_tipo_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:30%">
+                                        <span><strong>Tarea</strong></span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.x_tarea_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:30%">
+                                        <span><strong>Pyto. Renovables</strong></span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.x_pr_instalacion_id"/>
+                                    </td>
+                                </tr>    
+                            </table>
+                            <br/>
+                            
+                            <t t-if=" '17233' not in o.x_no_preguntado">
+                                <h2>
+                                    <strong>Planta fotovoltaica y estructuras</strong>            
+                                </h2>
+                            </t>
+                            <t t-else="">    
+                                <t t-if=" '17234' not in o.x_no_preguntado">
+                                    <h2>
+                                        <strong>Planta fotovoltaica y estructuras</strong>            
+                                    </h2>
+                                </t>
+                                <t t-else="">
+                                    <t t-if=" '17237' not in o.x_no_preguntado">
+                                        <h2>
+                                            <strong>Planta fotovoltaica y estructuras</strong>            
+                                         </h2>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-if=" '17239' not in o.x_no_preguntado">
+                                            <h2>
+                                                <strong>Planta fotovoltaica y estructuras</strong>            
+                                            </h2>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-if=" '17240' not in o.x_no_preguntado">
+                                                <h2>
+                                                    <strong>Planta fotovoltaica y estructuras</strong>            
+                                                </h2>
+                                            </t>
+                                        </t>    
+                                    </t>    
+                                </t>
+                            </t>  
+                               
+                            <table class="table-border" style="width:100%;padding-top: 5px; padding-bottom:5px;">
+                                <tr t-if=" '17233' not in o.x_no_preguntado">    
+                                    <td style="width:30%" >
+                                        <strong>Estado general</strong>
+                                    </td>
+                                    <td >
+                                        <span t-field="o.x_crcf_general"/>
+                                     </td>
+                                </tr>   
+                                <tr t-if=" '17234' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Limpieza</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcf_limpieza"/>
+                                   </td>
+                                </tr>   
+                                <tr t-if=" '17237' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Conexionado eléctrico</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcf_conexion"/>
+                                   </td>
+                                </tr>   
+                                <tr t-if=" '17239' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Tornillería y fijaciones</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcf_tornilleria"/>
+                                   </td>
+                                </tr>   
+                                <tr t-if=" '17240' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Termografia</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcf_termografia"/>
+                                    </td>
+                                </tr>   
+                            </table>  
+                            <br/>
+                            
+                            <t t-if=" '17241' not in o.x_no_preguntado">
+                                <h2>
+                                    <strong>Inversores</strong>            
+                                </h2>
+                            </t>
+                            <t t-else="">    
+                                <t t-if=" '17242' not in o.x_no_preguntado">
+                                    <h2>
+                                        <strong>Inversores</strong>            
+                                    </h2>
+                                </t>
+                                <t t-else="">
+                                    <t t-if=" '17243' not in o.x_no_preguntado">
+                                        <h2>
+                                            <strong>Inversores</strong>            
+                                         </h2>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-if=" '17244' not in o.x_no_preguntado">
+                                            <h2>
+                                                <strong>Inversores</strong>            
+                                            </h2>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-if=" '17245' not in o.x_no_preguntado">
+                                                <h2>
+                                                    <strong>Inversores</strong>            
+                                                </h2>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-if=" '17246' not in o.x_no_preguntado">
+                                                    <h2>
+                                                        <strong>Inversores</strong>            
+                                                    </h2>
+                                                </t>
+                                            </t>    
+                                        </t>    
+                                    </t>    
+                                </t>
+                            </t>    
+                                      
+                            
+                            <table class="table-border" style="width:100%;padding-top: 5px; padding-bottom:5px;">
+                                <tr t-if=" '17241' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Estado general</strong>
+                                    </td>
+                                    <td >
+                                        <span t-field="o.x_crcf_general"/>
+                                     </td>
+                                </tr>   
+                                <tr t-if=" '17242' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Limpieza</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crin_limpieza"/>
+                                   </td>
+                                </tr>   
+                                <tr t-if=" '17243' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Conexionado eléctrico</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crin_conexion"/>
+                                   </td>
+                                </tr>   
+                                <tr t-if=" '17244' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Tornillería y fijaciones</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crin_tornilleria"/>
+                                   </td>
+                                </tr>   
+                                <tr t-if=" '17245' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Filtros</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crin_filtro"/>
+                                    </td>
+                                </tr>
+                                 <tr t-if=" '17246' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Ventilación</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crin_ventilacion"/>
+                                    </td>
+                                </tr>  
+                                
+                              
+                            </table>  
+                            
+                            <br/>
+                            
+                            <t t-if=" '17256' not in o.x_no_preguntado">
+                                <h2>
+                                    <strong>Cuadros eléctricos CC y CA</strong>            
+                                </h2>
+                            </t>
+                            <t t-else="">    
+                                <t t-if=" '17257' not in o.x_no_preguntado">
+                                    <h2>
+                                        <strong>Cuadros eléctricos CC y CA</strong>            
+                                    </h2>
+                                </t>
+                                <t t-else="">
+                                    <t t-if=" '17258' not in o.x_no_preguntado">
+                                        <h2>
+                                            <strong>Cuadros eléctricos CC y CA</strong>            
+                                         </h2>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-if=" '17259' not in o.x_no_preguntado">
+                                            <h2>
+                                                <strong>Cuadros eléctricos CC y CA</strong>            
+                                            </h2>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-if=" '17260' not in o.x_no_preguntado">
+                                                <h2>
+                                                    <strong>Cuadros eléctricos CC y CA</strong>            
+                                                </h2>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-if=" '17261' not in o.x_no_preguntado">
+                                                    <h2>
+                                                        <strong>Cuadros eléctricos CC y CA</strong>            
+                                                    </h2>
+                                                </t>
+                                                <t t-else="">
+                                                    <t t-if=" '17262' not in o.x_no_preguntado">
+                                                        <h2>
+                                                            <strong>Cuadros eléctricos CC y CA</strong>            
+                                                        </h2>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <t t-if=" '17263' not in o.x_no_preguntado">
+                                                            <h2>
+                                                                <strong>Cuadros eléctricos CC y CA</strong>            
+                                                            </h2>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <t t-if=" '17264' not in o.x_no_preguntado">
+                                                                <h2>
+                                                                    <strong>Cuadros eléctricos CC y CA</strong>            
+                                                                </h2>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <t t-if=" '17265' not in o.x_no_preguntado">
+                                                                    <h2>
+                                                                        <strong>Cuadros eléctricos CC y CA</strong>            
+                                                                    </h2>
+                                                                </t>
+                                                            </t>    
+                                                        </t>    
+                                                    </t>    
+                                                </t>    
+                                            </t>    
+                                        </t>    
+                                    </t>    
+                                </t>
+                            </t>    
+                                      
+                            
+                            <table class="table-border" style="width:100%;padding-top: 5px; padding-bottom:5px;" >
+                                <tr t-if=" '17256' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Limpieza CA</strong>
+                                    </td>
+                                    <td >
+                                        <span t-field="o.x_crcu_limpieza_ca"/>
+                                     </td>
+                                </tr>   
+                                <tr t-if=" '17257' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Limpieza CC</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcu_limpieza_cc"/>
+                                   </td>
+                                </tr>   
+                                <tr t-if=" '17258' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Conexionado CA</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcu_conexion_ca"/>
+                                   </td>
+                                </tr>   
+                                <tr t-if=" '17259' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Conexionado CC</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcu_conexion_cc"/>
+                                   </td>
+                                </tr>   
+                                <tr t-if=" '17260' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Tornillería y fij. CA</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcu_tornilleria_ca"/>
+                                    </td>
+                                </tr>
+                                <tr t-if=" '17261' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Tornillería y fij. CC</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcu_tornilleria_cc"/>
+                                    </td>
+                                </tr>  
+                                <tr t-if=" '17262' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Humedades CA</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcu_humedad_ca"/>
+                                    </td>
+                                </tr> 
+                                <tr t-if=" '17263' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Humedades CC</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcu_humedad_cc"/>
+                                    </td>
+                                </tr>  
+                                <tr t-if=" '17264' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Protecciones CA</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcu_proteccion_ca"/>
+                                    </td>
+                                </tr>  
+                                <tr t-if=" '17265' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Protecciones CC</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcu_proteccion_cc"/>
+                                    </td>
+                                </tr>  
+                              
+                            </table>  
+                            <br/>
+                            <h2>
+                                <strong>Varios</strong>            
+                            </h2>
+                            <table class="table-border" style="width:100%;padding-top: 5px; padding-bottom:5px;" >
+                                <tr t-if=" '17266' not in o.x_no_preguntado">    
+                                    <td style="width:30%">
+                                        <strong>Protecciones CC</strong>
+                                    </td>  
+                                    <td >
+                                        <span t-field="o.x_crcu_proteccion_cc"/>
+                                    </td>
+                                </tr> 
+                                <tr>    
+                                    <td style="width:30%">
+                                        <strong>Nota</strong>
+                                    </td>  
+                                    <td style="width:70%">
+                                        <span t-field="o.x_nota"/>
+                                    </td>
+                                </tr>  
+                            </table>
+                    </t>
+    </template>
+    
+    <template id="report_cuestionarios">
+    <t t-call="web.html_container">
+                        <t t-foreach="docs" t-as="o">
+                            <t t-call="portal_cuestionarios.report_cuestionarios_document"/>
+                        </t>
+    </t>
+    </template>
+
+</odoo>
