@@ -14,7 +14,7 @@
     'license': 'AGPL-3',
     'installable': True,
     'depends': [
-        'website',
+       
     ],
     'data': [
         'views/templates.xml',
