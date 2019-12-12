@@ -73,8 +73,26 @@
     
     <template id="portal_au_report" name="au Portal Report">
         <div class="row">
-            <div class="col-xs-5" name="customer_address">
-                <strong>Customer Address</strong>
+             <div class="col-xs-10" name="Documento">
+                <strong>Documento :<span t-field="au.x_name"/> </strong>
+            </div>
+            <div class="row mt32 mb32">
+            <div class="col-xs-5" t-if="au.x_localizacion_id.name">
+                <strong>Localización:</strong>
+                <p t-field="au.x_localizacion_id.name"/>
+            </div>
+            <div class="col-xs-5" t-if="au.x_tipo">
+                <strong>Tipo Autorización:</strong>
+                <p t-field="au.x_tipo"/>
+            </div>
+            <div class="col-xs-5" t-if="au.x_tipo_mapama_id.x_name">
+                <strong>Tipo MAPAMA:</strong>
+                <p t-field="au.x_tipo_mapama_id.x_name"/>
+            </div>
+            <div class="col-xs-5" t-if="au.x_codigo_mapama_id">
+                <strong>Código MAPAMA:</strong>
+                <p t-field="au.x_codigo_mapama_id"/>
+            </div>
             </div>
         </div>
     </template>

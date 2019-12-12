@@ -73,9 +73,29 @@
     
     <template id="portal_ct_report" name="ct Portal Report">
         <div class="row">
-            <div class="col-xs-5" name="customer_address">
-                <strong>Customer Address</strong>
+           
+            <div class="col-xs-10" name="Documento">
+                <strong>Documento :<span t-field="ct.x_name"/> </strong>
             </div>
+            <div class="row mt32 mb32">
+            <div class="col-xs-5" t-if="ct.x_codigoct">
+                <strong>Codigo CT:</strong>
+                <p t-field="ct.x_codigoct"/>
+            </div>
+            <div class="col-xs-5" t-if="ct.x_productor_id.name">
+                <strong>Productor:</strong>
+                <p t-field="ct.x_productor_id.name"/>
+            </div>
+            <div class="col-xs-5" t-if="ct.x_gestor_id.name">
+                <strong>Gestor:</strong>
+                <p t-field="ct.x_gestor_id.name"/>
+            </div>
+            <div class="col-xs-5" t-if="ct.x_autorizacion_id">
+                <strong>Autorizacion:</strong>
+                <p t-field="ct.x_autorizacion_id"/>
+            </div>
+            </div>
+       
         </div>
     </template>
     

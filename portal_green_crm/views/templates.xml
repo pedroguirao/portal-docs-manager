@@ -94,8 +94,26 @@
     
     <template id="portal_di_report" name="Di Portal Report">
         <div class="row">
-            <div class="col-xs-5" name="customer_address">
-                <strong>Customer Address</strong>
+            <div class="col-xs-10" name="Documento">
+                <strong>Documento :<span t-field="di.x_name"/> </strong>
+            </div>
+            <div class="row mt32 mb32">
+            <div class="col-xs-5" t-if="di.x_operador_traslado_id">
+                <strong>Operador:</strong>
+                <p t-field="di.x_operador_traslado_id"/>
+            </div>
+            <div class="col-xs-5" t-if="di.x_productor_id">
+                <strong>Origen:</strong>
+                <p t-field="di.x_productor_id"/>
+            </div>
+            <div class="col-xs-5" t-if="di.x_gestor_id">
+                <strong>Destino:</strong>
+                <p t-field="di.x_gestor_id"/>
+            </div>
+            <div class="col-xs-5" t-if="di.x_ctratamiento_id">
+                <strong>Contrato de tratamiento:</strong>
+                <p t-field="di.x_ctratamiento_id"/>
+            </div>
             </div>
         </div>
     </template>
