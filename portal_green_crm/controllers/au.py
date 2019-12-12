@@ -124,7 +124,7 @@ class CustomerPortalAu(CustomerPortal):
             return request.redirect('/my')
         # print report as sudo, since it require access to taxes, payment term, ... and portal
         # does not have those access rights.
-        pdf = request.env.ref('studio_customization.autorizaciones_repor_2e55e142-af60-498b-b267-40268d220a9e').sudo().render_qweb_pdf([au_sudo.id])[0]
+        pdf = request.env.ref('studio_customization.autorizaciones_repor_4107c771-84a7-456e-b0ad-7fabb6f1544c').sudo().render_qweb_pdf([au_sudo.id])[0]
         pdfhttpheaders = [
             ('Content-Type', 'application/pdf'),
             ('Content-Length', len(pdf)),
