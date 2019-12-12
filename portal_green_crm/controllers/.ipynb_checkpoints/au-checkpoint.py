@@ -16,16 +16,21 @@ class CustomerPortal(CustomerPortal):
         partner = request.env.user.partner_id
 
         DI = request.env['x_dis']
-        di_count = DI.search_count([
-            ('x_estado', 'in', ['pendiente']),
-        ])
-        order_count = DI.search_count([
-            ('x_estado', 'in', ['pendiente']),
-        ])
-
+        di_count = DI.search_count([])
+        #order_count = DI.search_count([])
+        CT = request.env['x_ctratamientos']
+        ct_count = CT.search_count([])
+        #order_count = CT.search_count([])
+        NT = request.env['x_nts']
+        nt_count = NT.search_count([])
+        Autorizaciones = request.env['x_autorizaciones']
+        autorizaciones_count = Autorizaciones.search_count([])
+        
         values.update({
             'di_count': di_count,
-            'order_count': order_count,
+            'ct_count': ct_count,
+            'nt_count': nt_count,
+            'autorizaciones_count': autorizaciones_count,
         })
         return values
 
@@ -33,10 +38,13 @@ class CustomerPortal(CustomerPortal):
     def portal_my_dis(self, page=1, date_begin=None, date_end=None, sortby=None, **kw):
         values = self._prepare_portal_layout_values()
         partner = request.env.user.partner_id
+        user_id = request.env.user.user_id
+        print(partner)
+        print(user_id)
         DI = request.env['x_dis']
 
         domain = [
-            ('x_estado', 'in', ['pendiente']),
+            #('x_estado', 'in', ['pendiente']),
         ]
 
         searchbar_sortings = {

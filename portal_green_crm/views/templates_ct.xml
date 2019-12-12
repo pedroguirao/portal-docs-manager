@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+           
+   <template id="portal_my_cts" name="My CTS">
+        <t t-call="portal.portal_layout">
+        <h3>CT's
+            <t t-call="portal.portal_searchbar"/>
+        </h3>
+        <t t-if="not cts">
+            <p>There are currently no ct for your account.</p>
+        </t>
+        <div t-if="cts" class="panel panel-default">
+            <div class="table-responsive"><table class="table table-hover o_portal_my_doc_table">
+                <thead>
+                  <tr class="active">
+                      <th>ct #</th>
+                      <th>Gestor</th>
+                      <th>Autorización</th>
+                      <th></th>
+                    </tr>
+                </thead>
+                <t t-foreach="cts" t-as="ct">
+                    <tr>
+                        <td>
+                            <a t-attf-href="/my/cts/#{ct.id}?#{keep_query()}"><t t-esc="ct.x_name"/></a>
+                        </td>
+                        <td><span t-field="ct.x_gestor_id"/></td>
+                        <td>
+                          <t t-if="ct.x_autorizacion_id">
+                            <span t-field="ct.x_autorizacion_id"/>
+                          </t>
+                        </td>
+                    </tr>
+                </t>
+            </table></div>
+            <div t-if="pager" class="o_portal_pager text-center">
+              <t t-call="portal.pager"/>
+            </div>
+        </div>
+      </t>
+    </template>
+    
+        <template id="portal_ct_page" name="ct Portal Template">
+        <t t-call="portal.portal_layout">
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>
+                                    <t t-call='portal.record_pager'/>
+                                    
+                                    <span t-field="ct.x_name"/>
+                                </h4>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 hidden-print" id="o_portal_account_actions">
+                                <a target="_blank" t-att-href="'/my/cts/pdf/%s?%s' % (ct.id, keep_query())" class="pull-right" title="Download">
+                                    <i class="fa fa-download fa-2x" aria-hidden="true"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <t t-if="error or warning" t-call="portal_cts.portal_ct_error"/>
+                        <t t-if="success and (not error and not warning)" t-call="portal_cts.portal_ct_success"/>
+                        <t t-call="portal_green_crm.portal_ct_report"/>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure mb32"/>
+        </t>
+    </template>
+    
+    <template id="portal_ct_report" name="ct Portal Report">
+        <div class="row">
+            <div class="col-xs-5" name="customer_address">
+                <strong>Customer Address</strong>
+            </div>
+        </div>
+    </template>
+    
+    <template id="portal_ct_error" name="ct error/warning display">
+        <div class="row mr16">
+            <div t-attf-class="'col-md-12 mr16 ml16 alert alert-dismissable' #{'alert-danger' if error else 'alert-warning'}">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                <t t-if="error == 'generic'" name="generic">
+                    There was an error processing this page.
+                </t>
+            </div>
+        </div>
+    </template>
+
+    <template id="portal_ct_success" name="ct success display">
+        <div class="row mr16">
+            <div class="col-md-12 mr16 ml16 alert alert-dismissable alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            </div>
+        </div>
+    </template>
+
+</odoo>
