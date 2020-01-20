@@ -24,6 +24,6 @@
         'views/templates_ct.xml',
         'views/templates_nt.xml',
         'views/templates_au.xml',
-        'data/default_rules',
+        'data/default_rules.xml',
     ],
 }
