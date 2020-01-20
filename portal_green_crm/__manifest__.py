@@ -10,7 +10,7 @@
     -CT
     -Autorizaciones
     """,
-    'version': '11.0.5.0.0',
+    'version': '11.0.6.0.0',
     'category': 'Other',
     'website': "https://ingenieriacloud.com",
     'author': "Ingenieriacloud",
@@ -24,5 +24,6 @@
         'views/templates_ct.xml',
         'views/templates_nt.xml',
         'views/templates_au.xml',
+        'data/default_rules',
     ],
 }

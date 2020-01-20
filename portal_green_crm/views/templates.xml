@@ -35,8 +35,9 @@
                 <thead>
                   <tr class="active">
                       <th>DI #</th>
-                      <th>Operador</th>
-                      <th>Estado</th>
+                      <th>Destino</th>
+                      <th>Transportista</th>
+                      <th>Fecha</th>
                       <th></th>
                     </tr>
                 </thead>
@@ -45,12 +46,9 @@
                         <td>
                             <a t-attf-href="/my/dis/#{di.id}?#{keep_query()}"><t t-esc="di.x_name"/></a>
                         </td>
-                        <td><span t-field="di.x_operador_traslado_id"/></td>
-                        <td>
-                          <t t-if="di.x_estado == 'pendiente'">
-                            <span class="label label-default"><i class="fa fa-fw fa-remove"/> Pendiente</span>
-                          </t>
-                        </td>
+                        <td><span t-field="di.x_gestor_id"/></td>
+                        <td><span t-field="di.x_trans1_id"/></td>
+                         <td><span t-field="di.x_fdi_inicio_id"/></td>
                     </tr>
                 </t>
             </table></div>
